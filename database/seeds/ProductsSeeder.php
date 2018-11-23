@@ -14,10 +14,8 @@ class ProductsSeeder extends Seeder
         Product::create ([
             'name' => 'AM4 - Gigabyte GA-A320M-S2H',
             'price' => '2500',
-            'brand' => 'Asus',
-            'category' => 'Motherboard',
         ]);
 
-        factory (Product::class, 99)->create();
+        factory (Product::class, 30)->create();
     }
 }
