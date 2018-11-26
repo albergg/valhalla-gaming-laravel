@@ -12,7 +12,7 @@ class Product extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'price', 'brand', 'category','category_id','brand_id', 'image',
+        'name', 'price', 'brand', 'category', 'description','category_id','brand_id', 'image',
     ];
 
     public function category()
@@ -25,6 +25,10 @@ class Product extends Model
 	{
 	
 		return $this->hasOne(Brand::class, 'id', 'brand_id');
+	}
+	public function descrption()
+	{
+		return $this->hasOne(Description::class, 'id', 'description_id');
 	}
 
 	public function users()
