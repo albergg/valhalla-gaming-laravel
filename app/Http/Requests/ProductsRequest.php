@@ -44,8 +44,8 @@ class ProductsRequest extends FormRequest
 			'name.required' => 'Name is required',
 			'price.required' => 'Price is required',
 			'genre_id.required' => 'El género es obligatorio',
-			'price.numeric' => 'El price debe ser un número',
-			'price.max' => 'El price debe ser un número entre 0 y 999999',
+			'price.numeric' => 'Price must be a number',
+			'price.max' => 'Price must be a number between 0 & 999999',
 			// 'poster.required' => 'La imagen es obligatoria',
 			// 'poster.mimes' => 'Formatos permitidos JPG, y PNG',
 		];

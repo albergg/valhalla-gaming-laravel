@@ -31,12 +31,12 @@ class Product extends Model
 		return $this->hasOne(Description::class, 'id', 'description_id');
 	}
 
-	public function users()
+	public function user()
 	{
 		// return $this->belongsToMany(Color::class, 'color_product', 'product_id', 'color_id')->withTimestamps();
 
 		// En las realción es de "muchos", si las foreign keys y los constraints están bien hechos
 		// No es necesario pasar los demas parámetros
-		return $this->belongsToMany(User::class)->withTimestamps();
+		return $this->belongsTo(User::class);
 	}
 }
