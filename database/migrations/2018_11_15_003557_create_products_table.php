@@ -20,7 +20,7 @@ class CreateProductsTable extends Migration
             $table->unsignedInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->text('description');
-            $table->string('image', 100)->nullable();
+            $table->string('image', 100)->nullable()->default('default.jpg');
             $table->timestamps();
         });
     }

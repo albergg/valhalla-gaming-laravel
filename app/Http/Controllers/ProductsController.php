@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Product;
 use App\Brand;
 use App\Category;
+use App\Http\Requests\ProductsRequest;
 
 
 class ProductsController extends Controller
@@ -43,6 +44,7 @@ class ProductsController extends Controller
      */
     public function store(ProductsRequest $request)
     {
+
         $product = new Product;
 
 		self::storeOrUpdate($product, $request);
@@ -71,7 +73,12 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = Product::findOrFail($id);
+        $brands = Brand::orderBy('name')->get();
+        $categories = Category::orderBy('name')->get();
+        
+
+		return view('products.editForm')->with( compact('product', 'brands', 'categories') );
     }
 
     /**
@@ -105,20 +112,20 @@ class ProductsController extends Controller
 		$product->brand_id = $request->brand_id;
 		$product->description = $request->description;
 
-		// // Necesito el archivo en una variable esta vez
-		// $file = $request->file("poster");
+		// Necesito el archivo en una variable esta vez
+		$file = $request->file("image");
 
-		// // Nombre final de la imagen
-		// $finalName = strtolower(str_replace(" ", "_", $request->input("name")));
+		// Nombre final de la imagen
+		$finalName = strtolower(str_replace(" ", "_", $request->input("name")));
 
-		// // Armo un nombre único para este archivo
-		// $name = $finalName . uniqid('_image_') . "." . $file->extension();
+		// Armo un nombre único para este archivo
+		$name = $finalName . uniqid('_image_') . "." . $file->extension();
 
-		// // Guardo el archivo en la carpeta
-		// $file->storePubliclyAs("public/posters", $name);
+		// Guardo el archivo en la carpeta
+		$file->storePubliclyAs("public/products", $name);
 
-		// // Guardo en base de datos el nombre de la imagen
-		// $product->poster = $name;
-		// $product->save();
+		// Guardo en base de datos el nombre de la imagen
+		$product->image = $name;
+		$product->save();
 	}
 }

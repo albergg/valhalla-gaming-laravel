@@ -40,13 +40,13 @@
                 </select>
         </div>
     
-        {{-- <div class="form-group">
+        <div class="form-group">
             <label>Image:</label>
             <div class="custom-file">
                 <input type="file" class="custom-file-input" id="customFile" name="image">
                 <label class="custom-file-label" for="customFile">Choose file...</label>
             </div>
-        </div> --}}
+        </div>
     
         <div class="form-group">
             <label>Brand:</label>
@@ -67,10 +67,7 @@
             <label>Description:</label>
             <input type="text-area" name="description" class="form-control" value="{{ old('description') }}">
         </div>
-        {{-- <div class="form-group">
-            <label>Release:</label>
-            <input type="date" name="release_date" class="form-control" value="{{ old('release_date') }}">
-        </div> --}}
+
     
         <button type="submit" class="btn btn-success">CREATE</button>
     </form>

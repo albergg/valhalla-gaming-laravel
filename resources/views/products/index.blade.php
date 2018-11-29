@@ -23,7 +23,8 @@
         <li style="padding: 10px 0;">
             <b>Name:</b> {{ $oneProduct->name }} |
             <b>Price</b>:{{ $oneProduct->price ?? 'Sin precio' }} |
-            {{-- <b>Genre:</b> {{ $oneProduct->genre ? $oneProduct->genre->name : 'Sin género' }} --}}
+            {{-- <b>IMAGE</b>:{{ $oneProduct->image ?? 'Sin imagen' }} | --}}
+            <img src="/storage/products/{{ $oneProduct->image }}" width="200">
             <a href="/products/{{ $oneProduct->id }}" class="btn btn-success">ver detalle</a>
         </li>
         @endforeach

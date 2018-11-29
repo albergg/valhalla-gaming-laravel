@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+{{-- {{asset ("/storage/products/" . $product->image)}} --}}
 @section('content')
     <h2>{{ $product->name }}</h2>
         @if ( session('errorDeleted') )
@@ -8,11 +8,12 @@
         </div>
         @endif
         <p><b>Price:</b> {{ $product->price ?? 'Sin duración' }}</p>
-        <p><b>Category:</b> {{ $product->category_id ?? 'Sin categoria' }}</p>
-        <p><b>Brand:</b> {{ $product->brand_id ?? 'Sin marca' }}</p>
+        <p><b>Category:</b> {{ $product->category->name ?? 'Sin categoria' }}</p>
+        <p><b>Brand:</b> {{ $product->brand->name ?? 'Sin marca' }}</p>
         <p><b>Description:</b> {{ $product->description }}</p>
-        {{-- <p><b>Genre:</b> {{ $product->genre ? $product->genre->name : 'Sin género'}}</p>
-        <img src="/storage/posters/{{ $product->poster }}" width="200"> --}}
+        {{-- <p><b>Image:</b> {{ $oneProduct->image }}</p> --}}
+        
+        <img src="/storage/products/{{ $product->image }}" width="200">
         <hr>
         <a href="/products" class="btn btn-info">volver</a>
         <a href="/products/{{ $product->id }}/edit" class="btn btn-warning">actualizar</a>
