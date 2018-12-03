@@ -1,4 +1,4 @@
-@extends('layouts.app') 
+@extends('layout.base') 
 @section('title', 'Edit Product') 
 @section('content')
 <h2>Edit product: {{ $product->name }}</h2>
@@ -23,17 +23,14 @@
         </div>
     </div>
 
-    {{-- <div class="form-group">
-        <label>Brand:</label>
-        <input type="text" name="brand" class="form-control" value=" {{ old('brand', $product->brand) }}">
-    </div> --}}
-{{-- 
     <div class="form-group">
-        <label>Category:</label>
-        <input type="text" name="category" class="form-control" value=" {{ old('category', $product->category) }}">
-    </div> --}}
+        <label>Price:</label>
+        <input type="number" name="price" class="form-control {{ $errors->has('price') ? 'is-invalid': '' }}" value="{{ old('price', $product->price) }}">
+        <div class="invalid-feedback">
+            {{ $errors->first('price') }}
+        </div>
+    </div>
 
-    
     <div class="form-group">
         <label>Category:</label>
         <select class="form-control" name="category_id" value="{{ old('category_id') }}">
@@ -62,6 +59,14 @@
             @endforeach
         </select>
     </div>
+
+    <div class="form-group">
+        <label>Description:</label>
+        <input type="text-area" name="description" class="form-control {{ $errors->has('description') ? 'is-invalid': '' }}" value="{{ old('description', $product->description) }}">
+        <div class="invalid-feedback">
+            {{ $errors->first('description') }}
+        </div>
+    </div>
     
     <div class="form-group">
         <label>Image:</label>
@@ -75,6 +80,7 @@
         <input type="date" name="release_date" class="form-control" value="{{ $product->release_date->format('Y-m-d') }}">
     </div> --}}
 
-    <button type="submit" class="btn btn-success">CREAR</button>
+    <button type="submit" class="btn btn-success">Save</button>
+    <a href="/products/{{ $product->id }}" class="btn btn-warning">Back</a>
 </form>
 @endsection

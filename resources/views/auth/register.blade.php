@@ -1,4 +1,12 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app') --}}
+
+@extends('layout.base')
+
+{{-- @include("{{ asset('js/registrer.js') }}") --}}
+
+
+
+@section('title', 'Valhalla Gaming REGISTRER')
 
 @section('content')
 <div class="container">
@@ -117,5 +125,8 @@
             </div>
         </div>
     </div>
+@section('javascript')
+    <script src="{{ asset('js/registrer.js') }}"></script>
+@endsection
 </div>
 @endsection

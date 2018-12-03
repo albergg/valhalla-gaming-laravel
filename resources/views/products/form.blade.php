@@ -1,5 +1,5 @@
-@extends('layouts.app')
-
+@extends('layout.base') 
+@section('title', 'VG | Create Product') 
 @section('content')
     <h2>Create product</h2>
     

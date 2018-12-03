@@ -90,7 +90,11 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $product = Product::find($id);
+
+		self::storeOrUpdate($product, $request);
+
+		return redirect('/products')->with('edited', "Product edited: $product->name");
     }
 
     /**
@@ -101,7 +105,14 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        //
+		try {
+			$product = Product::findOrFail($id);
+			$product->delete();
+			// Al hacer redirect se guarda en SESSION una posición deleted con el valor indicado
+			return redirect('/products')->with('deleted', 'Product deleted');
+		} catch (\Exception $e) {
+			return redirect('/products/'.$id)->with('errorDeleted', 'Could not be deleted :(');
+		}
     }
 
     	public function storeOrUpdate($product, $request)

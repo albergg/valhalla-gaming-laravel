@@ -1,5 +1,5 @@
-@extends('layouts.app')
-{{-- {{asset ("/storage/products/" . $product->image)}} --}}
+@extends('layout.base') 
+@section('title', 'Detail') 
 @section('content')
     <h2>{{ $product->name }}</h2>
         @if ( session('errorDeleted') )
@@ -15,10 +15,10 @@
         
         <img src="/storage/products/{{ $product->image }}" width="200">
         <hr>
-        <a href="/products" class="btn btn-info">volver</a>
-        <a href="/products/{{ $product->id }}/edit" class="btn btn-warning">actualizar</a>
+        <a href="/products" class="btn btn-info">Back</a>
+        <a href="/products/{{ $product->id }}/edit" class="btn btn-warning">Edit</a>
         <form action="{{ route('products.destroy', $product->id) }}" method="post" style="display: inline-block;">
             @csrf {{ method_field('DELETE') }}
-            <button type="submit" class="btn btn-danger">borrar</button>
+            <button type="submit" class="btn btn-danger">Delete</button>
         </form>
 @endsection
