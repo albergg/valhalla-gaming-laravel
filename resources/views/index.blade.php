@@ -22,14 +22,14 @@
                     <h2>The future has landed</h2>
                     <p>And there are no hoverboards or flying cars.<br /> Just apps. Lots of mother flipping apps.</p>
                 </header>
-                <span class="image"><img src="{{ asset('/storage/index/carrousel/valhalla-logo.png') }}" alt="" /></span>
+                <span class="image"><img src="{{ asset('/images/valhalla-logo.png') }}" alt="" /></span>
             </div>
             <a href="#one" class="goto-next scrolly">Next</a>
         </section>
 
         <!-- One -->
         <section id="one" class="spotlight style1 bottom">
-            <span class="image fit main"><img src="{{ asset('/storage/index/carrousel/aourus-banner.jpg') }}" alt="" /></span>
+            <span class="image fit main"><img src="{{ asset('/images/aourus-banner.jpg') }}" alt="" /></span>
             <div class="content">
                 <div class="container">
                     <div class="row">
@@ -57,7 +57,7 @@
 
         <!-- Two -->
         <section id="two" class="spotlight style2 right">
-            <span class="image fit main"><img src="{{ asset('/storage/index/carrousel/gtx2080-banner.jpg') }}" alt="" /></span>
+            <span class="image fit main"><img src="{{ asset('/images/gtx2080-banner.jpg') }}" alt="" /></span>
             <div class="content">
                 <header>
                     <h2>Interdum amet non magna accumsan</h2>
@@ -75,7 +75,7 @@
 
         <!-- Three -->
         <section id="three" class="spotlight style3 left">
-            <span class="image fit main bottom"><img src="{{ asset('/storage/index/carrousel/ryzen-models-banner.jpg') }}" alt="" /></span>
+            <span class="image fit main bottom"><img src="{{ asset('/images/ryzen-models-banner.jpg') }}" alt="" /></span>
             <div class="content">
                 <header>
                     <h2>Interdum felis blandit praesent sed augue</h2>

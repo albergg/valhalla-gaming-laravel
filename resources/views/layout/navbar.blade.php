@@ -5,8 +5,8 @@
         <ul>
             <li><a href="/products">Products</a></li>
             <li>
-                <a href="/products">Products</a>
-                <ul>
+                <a href="/users">Users</a>
+                {{-- <ul>
                     <li><a href="left-sidebar.html">Left Sidebar</a></li>
                     <li><a href="right-sidebar.html">Right Sidebar</a></li>
                     <li><a href="no-sidebar.html">No Sidebar</a></li>
@@ -19,11 +19,15 @@
                             <li><a href="#">Option 4</a></li>
                         </ul>
                     </li>
-                </ul>
+                </ul> --}}
             </li>
             <li><a href="elements.html">Elements</a></li>
-            <li><a href="/register" class="button primary">Registrer</a></li>
-            <li><a href="/login" class="button ">Login</a></li>
+            @guest
+                <li><a href="/register" class="button primary">Registrer</a></li>
+                <li><a href="/login" class="button ">Login</a></li>
+            @else
+                <li><a href="/users/{{ Auth::user()->id }}" class="button ">{{ Auth::user()->name }}</a></li>
+            @endguest
         </ul>
     </nav>
 </header>

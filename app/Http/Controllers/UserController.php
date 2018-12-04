@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+use App\Product;
 
 class UserController extends Controller
 {
@@ -13,7 +15,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::orderBy('name')->paginate(10);
+		$allUsers = User::all()->count();
+
+		return view('users.index')->with( compact('users', 'allUsers') );
     }
 
     /**
@@ -45,7 +50,9 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $users = User::findOrFail($id);
+
+		return view('users.show')->with(compact('users'));
     }
 
     /**
