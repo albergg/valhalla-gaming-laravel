@@ -16,7 +16,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}" novalidate>
+                    <form method="POST" action="{{ route('register') }}" novalidate id="registerForm">
                         @csrf
 
                         <div class="form-group row">
@@ -25,11 +25,12 @@
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
 
+
+                                <span class="invalid-feedback" role="alert">
                                 @if ($errors->has('name'))
-                                    <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
+                                        @endif
+                                </span>
                             </div>
                         </div>
 
@@ -39,11 +40,12 @@
                             <div class="col-md-6">
                                 <input id="username" type="text" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" name="username" value="{{ old('username') }}" required autofocus>
 
+
+                                <span class="invalid-feedback" role="alert">
                                 @if ($errors->has('username'))
-                                    <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('username') }}</strong>
+                                        @endif
                                     </span>
-                                @endif
                             </div>
                         </div>
                         
@@ -53,11 +55,11 @@
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
                                 
-                                @if ($errors->has('email'))
                                 <span class="invalid-feedback" role="alert">
+                                @if ($errors->has('email'))
                                     <strong>{{ $errors->first('email') }}</strong>
+                                    @endif
                                 </span>
-                                @endif
                             </div>
                         </div>
                         
@@ -72,11 +74,11 @@
 
                                 {{-- <input id="country" type="text" class="form-control{{ $errors->has('country') ? ' is-invalid' : '' }}" name="country" value="{{ old('country') }}" required autofocus> --}}
 
+                                <span class="invalid-feedback" role="alert">
                                 @if ($errors->has('country'))
-                                    <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('country') }}</strong>
+                                        @endif
                                     </span>
-                                @endif
                             </div>
                         </div>
 
@@ -88,11 +90,11 @@
                                 autofocus>
                                 </select>   
 
+                                <span class="invalid-feedback" role="alert">
                                 @if ($errors->has('province'))
-                                    <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('province') }}</strong>
+                                        @endif
                                     </span>
-                                @endif
                             </div>
                         </div>
                         
@@ -102,11 +104,11 @@
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
                                 
+                                <span class="invalid-feedback" role="alert">
                                 @if ($errors->has('password'))
-                                    <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('password') }}</strong>
+                                        @endif
                                     </span>
-                                    @endif
                             </div>
                         </div>
 
@@ -117,6 +119,7 @@
                             
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                                <span class="errorTxt"></span>
                             </div>
                         </div>
                         
@@ -125,6 +128,7 @@
 
                             <div class="col-md-6">
                                 <input id="avatar" type="text" class="form-control{{ $errors->has('avatar') ? ' is-invalid' : '' }}" name="avatar" value="{{ old('avatar') }}" required autofocus>
+                                <span class="errorTxt"></span>
 
                                 @if ($errors->has('avatar'))
                                     <span class="invalid-feedback" role="alert">
