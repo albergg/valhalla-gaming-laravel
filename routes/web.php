@@ -22,6 +22,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/products/results/', 'ProductsController@results')->name('products.results');
 Route::resource('products', 'ProductsController');
 Route::resource('users', 'UserController');
+// Route::resource('brands', 'BrandController')->only (['show']);
 
-// Route::get('/products/search', 'ProductsController@search')->name('products.search');
-// Route::get('/products/results', 'ProductsController@results')->name('products.results');
+Route::get('/brands/show/', 'BrandController@show')->name('brand.show');

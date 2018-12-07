@@ -14,7 +14,7 @@ card-header {color: white}
 
 /* html, body {
     background: #1c1d26;
-    background-image:url('/images/mesa-viking.jpg');
+    background-image:url('/storage/app/public/index/valhalla-fondo.jpg') !important;
     background-position: center;
     background-size: cover;
 } */
@@ -27,3 +27,7 @@ ul
 {
     list-style-type: none;
 }
+
+.invalid-feedback { color: darkred; font-size: 95% }
+
+.provinceContainer {display: flex}

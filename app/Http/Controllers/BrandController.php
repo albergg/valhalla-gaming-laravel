@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Brand;
+use App\Product;
+use App\Category;
 use Illuminate\Http\Request;
 
 class BrandController extends Controller
@@ -14,7 +16,7 @@ class BrandController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -46,7 +48,11 @@ class BrandController extends Controller
      */
     public function show(Brand $brand)
     {
-        //
+        $products = Product::orderBy('name')->paginate(12);
+        $allProducts = Product::all()->count();
+        $brands = Brand::orderBy('name')->get();
+
+		return view('brands.show')->with( compact('products', 'allProducts', 'brands') );
     }
 
     /**

@@ -19,9 +19,10 @@ class ProductsController extends Controller
     public function index()
     {
         $products = Product::orderBy('name')->paginate(12);
-		$allProducts = Product::all()->count();
+        $allProducts = Product::all()->count();
+        $brands = Brand::orderBy('name')->get();
 
-		return view('products.index')->with( compact('products', 'allProducts') );
+		return view('products.index')->with( compact('products', 'allProducts', 'brands') );
     }
 
     /**

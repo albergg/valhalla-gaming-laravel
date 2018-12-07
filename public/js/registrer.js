@@ -1,11 +1,7 @@
-console.log ('funciona el registrer js');
-
-
 var select = document.getElementById('countriesSelect');
 // var select = document.querySelector('#countriesSelect');
 var provCont = document.getElementById('provinceContainer');
 var prov = document.getElementById('provinceSelect');
-console.log(provCont);
 
 function ajaxCall(url, callback) {
     window.fetch(url)
@@ -36,7 +32,7 @@ function fillCitiesSelect(cities) {
 
 select.addEventListener('change', function () {
     if (this.value === 'Argentina') {
-        provCont.style.display = 'block';
+        provCont.style.display = '';
         ajaxCall('https://dev.digitalhouse.com/api/getProvincias', fillCitiesSelect);
     } else {
         prov.innerHTML = '';

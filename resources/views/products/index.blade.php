@@ -21,7 +21,7 @@
     <form action="/products/results" method="get">
         <div class="form-group">
             <input type="text" name="searchProduct" class="from-control" placeholder="Find a product"> <br>
-            <button type="submit" class="button primary">Buscar</button>
+            <button type="submit" class="button primary">Search</button>
         </div>
     </form>
 </div>
@@ -36,10 +36,9 @@
             <div class="col-5 col-sm-3">
                 <h2>Brands</h2>
                 <ul>
-                    @foreach ($products as $oneProduct)
+                    @foreach ($brands as $oneBrand)
                     <li >
-                        <a href="">{{ $oneProduct->brand->name ?? 'No brand' }}</a> <br> {{-- <b>IMAGE</b>:{{ $oneProduct->image ?? 'Sin
-                        imagen' }} | --}}
+                        <a href="/brands/{{ $oneBrand->id }}">{{ $oneBrand->name }}</a> <br>
                     </li>
                     @endforeach
                 </ul>
