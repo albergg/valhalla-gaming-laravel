@@ -6,17 +6,18 @@
 
 
 
-@section('title', 'Valhalla Gaming REGISTRER')
+@section('title', 'Valhalla Gaming REGISTER')
 
 @section('content')
+<br><br>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+            <div class="card cardVG">
+                <div class="card-header cardHeader-VG">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}" novalidate id="registerForm">
+                    <form method="POST" action="{{ route('register') }}" novalidate id="registerForm" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group row">
@@ -140,7 +141,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="button primary">
                                     {{ __('Register') }}
                                 </button>
                             </div>

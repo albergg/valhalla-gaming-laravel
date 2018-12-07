@@ -7,6 +7,8 @@ $factory->define(App\Brand::class, function (Faker $faker) {
         'name' => $faker->unique()->randomElement ([
             'Msi',
             'Asus',
+            'Amd',
+            'Intel',
             'Gigabyte',
             'Asrock',
             'Sentey',

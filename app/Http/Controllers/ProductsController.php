@@ -18,7 +18,7 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $products = Product::orderBy('name')->paginate(10);
+        $products = Product::orderBy('name')->paginate(12);
 		$allProducts = Product::all()->count();
 
 		return view('products.index')->with( compact('products', 'allProducts') );
@@ -124,7 +124,9 @@ class ProductsController extends Controller
 		$product->description = $request->description;
 
 		// Necesito el archivo en una variable esta vez
-		$file = $request->file("image");
+        $file = $request->file("image");
+        
+    //    dd($file);
 
 		// Nombre final de la imagen
 		$finalName = strtolower(str_replace(" ", "_", $request->input("name")));
@@ -138,5 +140,21 @@ class ProductsController extends Controller
 		// Guardo en base de datos el nombre de la imagen
 		$product->image = $name;
 		$product->save();
+    }
+    
+    public function search()
+   {
+   	return view('products.search');
+   }
+
+	public function results(Request $request)
+	{
+		$queryString = $request->searchProduct;
+
+		$result = Product::where('name', 'LIKE', "%$queryString%")
+		//->orWhere('brand', 'LIKE', "%$queryString%")
+        ->get();
+            
+		return view('products.results')->with( compact('result', 'queryString') );
 	}
 }

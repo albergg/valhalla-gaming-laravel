@@ -19,12 +19,8 @@ $factory->define(App\Category::class, function (Faker $faker) {
             'Monitores',
             'Perifericos',
             'Consolas de Video Juego',
-            'Muebles',
             'Software',
             'Conectividad',
-            'Ropa, bolsos y mochilas',
-            'Oficina',
-            'Cables y cargadores',
             'Otros',
         ])
     ];

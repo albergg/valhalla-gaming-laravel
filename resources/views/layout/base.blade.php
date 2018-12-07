@@ -1,51 +1,82 @@
 <!DOCTYPE HTML>
 <html>
 
-<head>
-    <title>@yield('title')</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
-    <link rel="stylesheet" href="{{ asset('/assets/css/main.css') }}" /> {{-- /resources/assets/css/main.css --}}
-    <link rel="stylesheet" href="{{ asset('/css/valhalla.css') }}">
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-</head>
+    <head>
+        <title>@yield('title')</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('/assets/css/main.css') }}" />
+        <link rel="stylesheet" href="{{ asset('/css/lightbox.css') }}" />
+        <link rel="stylesheet" href="{{ asset('/css/valhalla.css') }}">
+        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    </head>
 
+    {{-- <!DOCTYPE HTML>
+    <html>
 
-{{-- <!DOCTYPE HTML>
-<html>
+    <head>
+        <title>Valhalla Gaming</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="{{ asset('/assets/css/main.css') }}" />
+        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    </head> --}}
 
-<head>
-    <html lang="es" dir="ltr">
-    <title>@yield('title')</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
-    <link rel="stylesheet" href="{{ asset('/assets/css/main.css') }}" />
-    <noscript><link rel="stylesheet" href="{{ asset('/assets/css/noscript.css')}}" /></noscript>
+    {{-- <!DOCTYPE HTML>
+    <html>
 
-</head> --}}
+    <head>
+        <html lang="es" dir="ltr">
+        <title>@yield('title')</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="{{ asset('/css/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('/assets/css/main.css') }}" />
+        <noscript><link rel="stylesheet" href="{{ asset('/assets/css/noscript.css')}}" /></noscript>
 
-<body>
-    @include('layout.navbar')
+    </head> --}}
+
+    <body>
+        @include('layout.navbar')
+        <br><br>
+        @yield('content') 
+            
+
+        @yield('javascript')
+    </body>
+    <!-- Footer -->
     <br><br>
-    @yield('content') 
-        
-
-    @yield('javascript')
-</body>
-
+    <footer id="footer">
+        <ul class="icons">
+            <li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+            <li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
+            <li><a href="#" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+            <li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+            <li><a href="#" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+            <li><a href="#" class="icon alt fa-envelope"><span class="label">Email</span></a></li>
+        </ul>
+        <ul class="copyright">
+            <li>&copy; Valhalla Gaming. All rights reserved.</li>
+            <li>Design: Alberto Gonzalez<a href="https://github.com/albergg/valhalla-gaming-laravel"> GitHub</a></li>
+        </ul>
+    </footer>
+    
+    <!-- Scripts -->
+    
+   
+    <script src="{{asset('assets/js/jquery.min.js')}}"></script>
+    <script src="{{asset('assets/js/jquery.scrolly.min.js')}}"></script>
+    <script src="{{asset('assets/js/jquery.dropotron.min.js')}}"></script>
+    <script src="{{asset('assets/js/jquery.scrollex.min.js')}}"></script>
+    <script src="{{asset('assets/js/browser.min.js')}}"></script>
+    <script src="{{asset('assets/js/breakpoints.min.js')}}"></script>
+    <script src="{{asset('assets/js/util.js')}}"></script>
+    <script src="{{asset('/js/app.js')}}"></script>
+    <script src="{{asset('assets/js/main.js')}}"></script>
+    <script src="{{asset('/js/lightbox.js')}}"></script>
+   
 </html>
-
-
-
-
-
-
-
-
-
-
 
 
 

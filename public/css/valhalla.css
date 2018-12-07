@@ -1,1 +1,29 @@
 form span.invalid-feedback strong { color: inherit; }
+
+.cardVG {background-color: rgb(109, 104, 104); color: black}
+
+.cardHeader-VG {color: white !important} 
+
+.btnVgPrimary {background-color: #e76278}
+
+input[type="text"], input[type="password"], input[type="email"], select, textarea { background: white; color: black}
+
+label {color: white}
+
+card-header {color: white}
+
+/* html, body {
+    background: #1c1d26;
+    background-image:url('/images/mesa-viking.jpg');
+    background-position: center;
+    background-size: cover;
+} */
+
+a {
+    border-bottom: none;
+}
+
+ul
+{
+    list-style-type: none;
+}

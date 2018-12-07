@@ -6,7 +6,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="{{ asset('/assets/css/main.css') }}" />
-    {{-- /resources/assets/css/main.css --}}
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
 
@@ -19,8 +18,8 @@
         <section id="banner">
             <div class="content">
                 <header>
-                    <h2>The future has landed</h2>
-                    <p>And there are no hoverboards or flying cars.<br /> Just apps. Lots of mother flipping apps.</p>
+                    <h2>Valhalla Gaming</h2>
+                    <p>Welcome to the world of the best gamer products .</p>
                 </header>
                 <span class="image"><img src="{{ asset('/images/valhalla-logo.png') }}" alt="" /></span>
             </div>
@@ -195,8 +194,8 @@
                 <li><a href="#" class="icon alt fa-envelope"><span class="label">Email</span></a></li>
             </ul>
             <ul class="copyright">
-                <li>&copy; Untitled. All rights reserved.</li>
-                <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                <li>&copy; Valhalla Gaming. All rights reserved.</li>
+                <li>Design: Alberto Gonzalez<a href="https://github.com/albergg/valhalla-gaming-laravel">GitHub</a></li>
             </ul>
         </footer>
 

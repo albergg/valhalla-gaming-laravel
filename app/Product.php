@@ -13,7 +13,12 @@ class Product extends Model
      */
     protected $fillable = [
         'name', 'price', 'brand', 'category', 'description','category_id','brand_id', 'image',
-    ];
+	];
+	
+	public function getName()
+   {
+   	return $this->name;
+   }
 
     public function category()
 	{
