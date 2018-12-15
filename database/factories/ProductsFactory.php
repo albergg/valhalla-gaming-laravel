@@ -10,7 +10,8 @@ $factory->define(App\Product::class, function (Faker $faker) {
         'description' => $faker->paragraph(4, true),
         'image' => $faker->randomElement ([
             'amd.jpeg',
-            'conectors.jpeg',
+            'video-card.jpeg',
+            'mother-gbt.jpg',
             'controler.jpeg',
             'cpu.jpeg',
             'giga.jpeg',
