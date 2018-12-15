@@ -38,6 +38,7 @@
     </head> --}}
 
     <body>
+        @include('sweetalert::alert')
         @include('layout.navbar')
         <br><br>
         @yield('content') 
